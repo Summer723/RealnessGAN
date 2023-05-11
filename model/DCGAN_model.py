@@ -41,7 +41,7 @@ class DCGAN_G(nn.Module):
 
         # end block
         model.append(nn.ConvTranspose2d(self.param.G_h_size, self.param.n_channels, kernel_size=4, stride=2, padding=1, bias=False))
-        model.append(nn.Tanh())
+        model.append(nn.Hardtanh())
 
         self.model = nn.Sequential(*model)
 
