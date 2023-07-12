@@ -90,10 +90,10 @@ class DataProvider:
         self.iter = iter(self.data_loader) 
     def __next__(self):
         try:
-            return self.iter.next()
+            return next(self.iter)
         except StopIteration:  # reload when an epoch finishes
             self.build()
-            return self.iter.next()
+            return next(self.iter)
 
 random_sample = DataProvider(data, param.batch_size)
 

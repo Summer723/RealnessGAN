@@ -3,3 +3,5 @@ LOG/*
 __pycache__
 training/__pycache__
 .DS_Store
+*.log
+*.out
